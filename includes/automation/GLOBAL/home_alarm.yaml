@@ -1,4 +1,4 @@
-- alias: '[ Alarm ] - Trigger when contact sensor detected'
+- alias: '[ Alarm ] - Detected'
   trigger:
   - platform: state
     entity_id: binary_sensor.entrace_door_contact
@@ -89,3 +89,17 @@
               title: "Silence Alarm"
               icon: "sfsymbols:bell.slash"
               destructable: true
+
+- alias: '[ Alarm ] - Disarmed'
+  id: 118afb36f63a4d8390330c3cf9593d91
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: disarmed
+  action:
+  - service: notify.mobile_app_iphone_amnezia
+    data:
+      title: "Сигнализация"
+      message: "Выключена кодом"
+      
+  
