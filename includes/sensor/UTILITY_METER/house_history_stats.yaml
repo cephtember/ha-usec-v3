@@ -1,0 +1,18 @@
+- platform: history_stats
+  name: Отсутствие электричества
+  entity_id: sensor.no_electricity
+  state: "off"
+  type: time
+  end: "{{ now().replace(hour=0, minute=0, second=0) }}"
+  duration:
+    days: 30
+    
+- platform: template
+  sensors:
+    no_electricity:
+      value_template: >-
+        {% if states('sensor.pzem04_energy_current') | float > 0 %}
+        on
+        {% else %}
+        off
+        {% endif %}

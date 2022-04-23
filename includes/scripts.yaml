@@ -1,0 +1,143 @@
+#photo_hikvision:
+#  alias: Make Photo From Hikvision
+#  sequence:
+#    - service: camera.snapshot
+#      data:
+#        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
+#        filename: "www/cam_captures/hikvision.jpg"
+
+#video_hikvision:
+#  alias: Make Video From Hikvision
+#  sequence:
+#    - service: camera.record
+#      data_template:
+#        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
+#        filename: "www/cam_captures/hikvision.mp4"
+
+
+photo_hikvision_telegram:
+  alias: Отправить фото в telegram
+  sequence:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
+        filename: "www/cam_captures/hikvision_upper.jpg"
+    - service: camera.snapshot
+      data:
+        entity_id: camera.embedded_net_vis_mainstream
+        filename: "www/cam_captures/hikvision_doorbell.jpg"
+    - delay: 00:00:3
+    - service: telegram_bot.send_photo
+      data_template:
+        target:
+         - !secret telegram_id_1
+         - !secret telegram_id_2
+        file: "www/cam_captures/hikvision_doorbell.jpg"
+        timeout: 60 # set any timeout
+    - service: telegram_bot.send_photo
+      data_template:
+        target:
+         - !secret telegram_id_1
+         - !secret telegram_id_2
+        file: "www/cam_captures/hikvision_upper.jpg"
+        timeout: 60 # set any timeout
+
+photo_hikvision_telegram_group:
+  alias: Отправить фото в telegram группу
+  sequence:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
+        filename: "www/cam_captures/hikvision_upper.jpg"
+    - service: camera.snapshot
+      data:
+        entity_id: camera.embedded_net_vis_mainstream
+        filename: "www/cam_captures/hikvision_doorbell.jpg"
+    - delay: 00:00:3
+    - service: telegram_bot.send_photo
+      data_template:
+        target:
+         - !secret telegram_group_id_1
+        file: "www/cam_captures/hikvision_doorbell.jpg"
+        timeout: 60 # set any timeout
+    - service: telegram_bot.send_photo
+      data_template:
+        target:
+         - !secret telegram_group_id_1
+        file: "www/cam_captures/hikvision_upper.jpg"
+        timeout: 60 # set any timeout
+
+video_hikvision_telegram:
+  alias: Отправить видео в telegram
+  sequence:
+    - service: camera.record
+      data_template:
+        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
+        filename: "www/cam_captures/hikvision.mp4"
+        duration: 10
+    - delay: 00:00:45
+    - service: telegram_bot.send_video
+      data_template:
+        target:
+          - !secret telegram_id_1
+          - !secret telegram_id_2
+        file: "www/cam_captures/hikvision.mp4"
+        timeout: 360 # set any timeout
+        
+video_hikvision_telegram_group:
+  alias: Отправить видео в telegram группу
+  sequence:
+    - service: camera.record
+      data_template:
+        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
+        filename: "www/cam_captures/hikvision.mp4"
+        duration: 10
+    - delay: 00:00:45
+    - service: telegram_bot.send_video
+      data_template:
+        target:
+          - !secret telegram_group_id_1
+        file: "www/cam_captures/hikvision.mp4"
+        timeout: 360 # set any timeout
+
+
+wet_clean: 
+  alias: "[Xiaomi 1C] - Влажная уборка"
+  sequence:
+  - service: xiaomi_vacuum.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_1c
+      repeats: 1
+      zone: '-6632,-3399,1289,4560'
+
+livingroom_clean:
+  alias: "[Xiaomi 1C] - Убрать Зал"
+  sequence:
+  - service: xiaomi_vacuum.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_1c
+      repeats: 1
+      zone: '-2362,-912,1151,4289'
+
+  
+clean_kitchen:
+  alias: "[Xiaomi 1C] - Убрать кухню"
+  sequence:
+  - service: xiaomi_vacuum.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_1c
+      repeats: 1
+      zone: '-4948,-956,-2125,567'
+
+  
+clean_hall:
+  alias: "[Xiaomi 1C] - Убрать коридор"
+  sequence:
+  - service: xiaomi_vacuum.vacuum_clean_zone
+    target:
+      entity_id: vacuum.xiaomi_1c
+    data:
+      repeats: 1
+      zone: '-6616,2673,-2235,4461'
+  
+  

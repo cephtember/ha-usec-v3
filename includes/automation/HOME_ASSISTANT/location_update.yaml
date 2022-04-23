@@ -1,0 +1,22 @@
+- alias: "[ Home Assistant ] - Обновлять локации устройств после перезапуске"
+  id: location_update_after_restart
+  trigger:
+      platform: homeassistant
+      event: start
+
+  action:
+    - service: notify.ALL_DEVICES
+      data:
+       message: "request_location_update"
+
+    - delay: 00:00:30
+
+    - service: notify.ALL_DEVICES
+      data:
+       message: "request_location_update"
+
+    - delay: 00:01:00
+
+    # - service: notify.ALL_DEVICES
+      # data:
+       # message: "Home Assistant Starting up"
