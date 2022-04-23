@@ -106,9 +106,9 @@
 
 ## Телевидение и стриминг
 
-| <a href="https://www.sony.ru/electronics/support/televisions-projectors-lcd-tvs-android-/kd-49xh8096/specifications"> Sony KD-49XH8096 </a> | <a href="https://www.xbox.com/ru-RU/consoles/xbox-one-s"> Xbox One S </a> | <a href="https://www.edifier.ru/shop/speakers/s3000pro/"> Edifier S3000 Pro </a> | <a href="https://www.apple.com/ru/apple-tv-4k/"> Apple TV (2021) </a> |
+| <a href="https://www.sony.ru/electronics/support/televisions-projectors-lcd-tvs-android-/kd-49xh8096/specifications"> Sony KD-49XH8096 </a> | <a href="https://www.xbox.com/"> Xbox Series X </a> | <a href="https://www.edifier.ru/shop/speakers/s3000pro/"> Edifier S3000 Pro </a> | <a href="https://www.apple.com/ru/apple-tv-4k/"> Apple TV (2021) </a> |
 | --- | --- | --- | --- |
-| <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/sony_kd-49XH8096.jpg" width="200"/> | <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/xboxone.jpg" width="200"/> | <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/edifier.webp" width="200" /> | <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/appletv.png" width="200" />
+| <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/sony_kd-49XH8096.jpg" width="200"/> | <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/xbox_series_x.png" width="200"/> | <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/edifier.webp" width="200" /> | <img src="https://raw.githubusercontent.com/neocaine/ha-usec-v3/main/www/images/logo/appletv.png" width="200" />
 
 # Компоненты умного дома
 
