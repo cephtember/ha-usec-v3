@@ -1,8 +1,6 @@
 - platform: manual
   name: Home Alarm
   code: 2331
-  states:
-    - arm_away
   code_arm_required: false # Don't need code to arm.
   disarm_after_trigger: false # Leave alarm armed after triggering.
   arming_time: 30 # Time to leave the house after arming.
