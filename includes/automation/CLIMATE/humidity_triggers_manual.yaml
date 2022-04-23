@@ -35,9 +35,15 @@
         title: Датчик влажности воздуха
         message: "{{ '\ud83d\udca7' }} Влажность в детской изменилась, и составляет:  {{ states('sensor.aqara_cabinet_temperature_humidity') }}"
         data:
-          push:
-            badge: 0
-            category: "humidity_cabinet_livingroom_humidifier"
+          actions:
+            - action: "HUMIDIFIERON"
+              title: "Включить увлажнитель"
+            - action: "HUMIDIFIERON1H"
+              title: "Включить увлажнитель на 1 час"
+            - action: "HUMIDIFIERPASS"
+              title: "Пропустить"
+              destructive: true
+            
             
     - delay: 9000
     
@@ -78,9 +84,16 @@
         title: Датчик влажности воздуха
         message: "{{ '\ud83d\udca7' }} Влажность в детской изменилась, и составляет:  {{ states('sensor.aqara_cabinet_temperature_humidity') }}"
         data:
-          push:
-            badge: 0
-            category: "humidity_cabinet_livingroom_fan"
+          actions:
+            - action: ACONFAN
+              title: "Включить увлажнитель"
+              destructive: no
+            - action: ACONFANON1H
+              title: "Включить увлажнитель на 1 час"
+              destructive: no
+            - identifier: ACONFANPASS
+              title: "Пропустить"
+              destructive: true
             
     - delay: 9000
     
@@ -122,9 +135,19 @@
         title: Датчик влажности воздуха
         message: "{{ '\ud83d\udca7' }} Влажность в зале изменилась, и составляет:  {{ states('sensor.livingroom_temperature_humidity') }}"
         data:
-          push:
-            badge: 0
-            category: "humidity_cabinet_livingroom_humidifier"
+          actions:
+            - action: HUMIDIFIERON
+              title: "Включить увлажнитель"
+              activationMode: "background"
+              destructive: no
+              behavior: "default"
+            - action: HUMIDIFIERON1H
+              title: "Включить увлажнитель на 1 час"
+              activationMode: "background"
+              destructive: no
+            - action: HUMIDIFIERPASS
+              title: "Пропустить"
+              destructive: true
     
     - delay: 9000
     
@@ -165,9 +188,19 @@
         title: Датчик влажности воздуха
         message: "{{ '\ud83d\udca7' }} Влажность в зале изменилась, и составляет:  {{ states('sensor.livingroom_temperature_humidity') }} "
         data:
-          push:
-            badge: 0
-            category: "humidity_cabinet_livingroom_fan"
+          actions:
+            - action: HUMIDIFIERON
+              title: "Включить увлажнитель"
+              activationMode: "background"
+              destructive: no
+              behavior: "default"
+            - action: HUMIDIFIERON1H
+              title: "Включить увлажнитель на 1 час"
+              activationMode: "background"
+              destructive: no
+            - action: HUMIDIFIERPASS
+              title: "Пропустить"
+              destructive: true
             
     - delay: 9000
     
@@ -177,9 +210,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: HUMIDIFIERON
+        action: HUMIDIFIERON
   action:
     - service: humidifier.turn_on
       target:
@@ -209,9 +242,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: HUMIDIFIERON1H
+        action: HUMIDIFIERON1H
   action:
     - service: humidifier.turn_on
       target:
@@ -248,9 +281,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONFAN
+        action: ACONFAN
   action:
     - service: climate.set_hvac_mode
       data:
@@ -265,9 +298,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONFANON1H
+        action: ACONFANON1H
   action:
     - service: climate.set_hvac_mode
       data:

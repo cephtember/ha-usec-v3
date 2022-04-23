@@ -16,9 +16,14 @@
         title: Датчик качества воздуха
         message: "{{ '\ud83d\udca7' }} Качество воздуха в зале ухудшилось, и составляет:  {{ states('sensor.zhimi_airpurifier_ma4_pm2_5') }} PM2.5"
         data:
-          push:
-            badge: 0
-            category: "purifier"
+          actions:
+            - action: PURIFIER1H
+              title: "Включить очиститель на 1 час"
+              destructive: no
+            - action: PURIFIERPASS
+              title: "Пропустить"
+              activationMode: "background"
+              destructive: true
             
     - delay: 9000
 
@@ -28,9 +33,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: PURIFIER1H
+        action: PURIFIER1H
   action:
     - service: fan.set_percentage
       target:

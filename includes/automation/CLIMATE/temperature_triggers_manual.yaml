@@ -35,9 +35,19 @@
         title: Датчик температуры воздуха
         message: "{{ '\ud83d\udca7' }} Температура в детской изменилась, и составляет:  {{ states('sensor.aqara_cabinet_temperature') }} градусов"
         data:
-          push:
-            badge: 0
-            category: "temperature_cabinet_livingroom_heat"
+          actions:
+            - action: ACANDFLOORONHEAT
+              title: "Включить AC и пол"
+              destructive: no
+            - action: ACANDFLOORONHEAT1H
+              title: "Включить AC и пол на 1 час"
+              destructive: no
+            - action: ACONHEAT
+              title: "Включить AC"
+              destructive: no
+            - action: ACONHEAT1H
+              title: "Включить AC на 1 час"
+              destructive: no
             
     - delay: 9000
             
@@ -152,9 +162,13 @@
         title: Датчик температуры воздуха
         message: "{{ '\ud83d\udca7' }} Температура в детской изменилась, и составляет:  {{ states('sensor.aqara_cabinet_temperature') }} градусов"
         data:
-          push:
-            badge: 0
-            category: "temperature_cabinet_livingroom_cool"
+          actions:
+            - action: ACONCOOL
+              title: "Включить AC"
+              destructive: no
+            - action: ACONCOOL1H
+              title: "Включить AC на 1 час"
+              destructive: no
             
     - delay: 9000
         
@@ -221,8 +235,19 @@
         message: "{{ '\ud83d\udca7' }} Температура в зале изменилась, и составляет:  {{ states('sensor.livingroom_temperature_temperature') }} градусов"
         data:
           push:
-            badge: 0
-            category: "temperature_cabinet_livingroom_heat"
+            actions:
+              - action: ACANDFLOORONHEAT
+                title: "Включить AC и пол"
+                destructive: no
+              - action: ACANDFLOORONHEAT1H
+                title: "Включить AC и пол на 1 час"
+                destructive: no
+              - action: ACONHEAT
+                title: "Включить AC"
+                destructive: no
+              - action: ACONHEAT1H
+                title: "Включить AC на 1 час"
+                destructive: no
     
     - delay: 9000
             
@@ -300,9 +325,13 @@
         title: Датчик температуры воздуха
         message: "{{ '\ud83d\udca7' }} Температура в зале изменилась, и составляет:  {{ states('sensor.livingroom_temperature_temperature') }} градусов"
         data:
-          push:
-            badge: 0
-            category: "temperature_cabinet_livingroom_cool"
+          actions:
+            - action: ACONCOOL
+              title: "Включить AC"
+              destructive: no
+            - action: ACONCOOL1H
+              title: "Включить AC на 1 час"
+              destructive: no
             
     - delay: 9000
             
@@ -523,9 +552,13 @@
         title: Датчик температуры воздуха
         message: "{{ '\ud83d\udca7' }} Температура в спальне изменилась, и составляет:  {{ states('sensor.bedroom_temperature_temperature') }} градусов"
         data:
-          push:
-            badge: 0
-            category: "temperature_bedroom_heat"
+          actions:
+            - action: ACONHEATBEDROOM
+              title: "Включить AC"
+              destructive: no
+            - action: ACON1HBEDROOM
+              title: "Включить AC на 1 час"
+              destructive: no
             
     - delay: 9000
             
@@ -602,9 +635,14 @@
         title: Датчик температуры воздуха
         message: "{{ '\ud83d\udca7' }} Температура в спальне изменилась, и составляет:  {{ states('sensor.bedroom_temperature_temperature') }} градусов"
         data:
-          push:
-            badge: 0
-            category: "temperature_bedroom_cool"
+          actions:
+            - action: ACONCOOLBEDROOM
+              title: "Включить AC"
+              destructive: no
+            - action: ACONCOOL1HBEDROOM
+              title: "Включить AC на 1 час"
+              destructive: no
+
             
     - delay: 9000
         
@@ -615,9 +653,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONHEATBEDROOM
+        action: ACONHEATBEDROOM
   action:
     - service: climate.set_hvac_mode
       data:
@@ -641,9 +679,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONHEAT1HBEDROOM
+        action: ACONHEAT1HBEDROOM
   action:
     - service: climate.set_hvac_mode
       data:
@@ -679,9 +717,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACANDFLOORONHEAT1H
+        action: ACANDFLOORONHEAT1H
   action:
     - service: climate.set_hvac_mode
       data:
@@ -714,9 +752,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACANDFLOORONHEAT
+        action: ACANDFLOORONHEAT
   action:
     - service: climate.set_hvac_mode
       data:
@@ -740,9 +778,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONHEAT
+        action: ACONHEAT
   action:
     - service: climate.set_hvac_mode
       data:
@@ -765,9 +803,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONHEAT1H
+        action: ACONHEAT1H
   action:
     - service: climate.set_hvac_mode
       data:
@@ -801,9 +839,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONCOOL
+        action: ACONCOOL
   action:
     - service: climate.set_hvac_mode
       data:
@@ -826,9 +864,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONCOOL1H
+        action: ACONCOOL1H
   action:
     - service: climate.set_hvac_mode
       data:
@@ -859,9 +897,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONCOOLBEDROOM
+        action: ACONCOOLBEDROOM
   action:
     - service: climate.set_hvac_mode
       data:
@@ -883,9 +921,9 @@
   initial_state: 'on'
   trigger:
     - platform: event
-      event_type: ios.notification_action_fired
+      event_type: mobile_app_notification_action
       event_data:
-        actionName: ACONCOOL1HBEDROOM
+        action: ACONCOOL1HBEDROOM
   action:
     - service: climate.set_hvac_mode
       data:
