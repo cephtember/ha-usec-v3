@@ -1,27 +1,3 @@
-- alias: '[ Alarm ] - Trigger when motion detected'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.kitchen_motion
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.bedroom_motion
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.bar_motion
-    to: 'on'
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: armed_home
-    - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: armed_away
-  action:
-    service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.home_alarm
-
 - alias: '[ Alarm ] - Trigger when contact sensor detected'
   trigger:
   - platform: state
@@ -57,6 +33,16 @@
   - platform: state
     entity_id: binary_sensor.bedroom_right_window_contact
     to: 'on'
+
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.bedroom_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.bar_motion
+    to: 'on'
   condition:
     condition: or
     conditions:
@@ -67,8 +53,19 @@
       entity_id: alarm_control_panel.home_alarm
       state: armed_away
   action:
-    service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.home_alarm
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+    - service: notify.mobile_app_iphone_amnezia
+      data:
+        title: Сигнализация
+        message: "Запущен таймер сигнализации"
+        
+        data:
+          url: "/lovelace-alarm/0" 
+          actions:
+            - action: "URI"
+              title: "Open Disarm Panel"
+              uri: "/lovelace-alarm/0"
 
 - alias: '[ Alarm ] - Triggered'
   trigger:
@@ -78,8 +75,8 @@
   action:
     - service: notify.mobile_app_iphone_amnezia
       data:
-        title: Датчик температуры воздуха
-        message: "{{ '\ud83d\udca7' }} Сработал триггер на сигнализацию:"
+        title: Сигнализация
+        message: "Сработала сигнализация"
         data:
           actions:
             - action: "URI"
@@ -91,3 +88,4 @@
             - action: "SILENCE"
               title: "Silence Alarm"
               icon: "sfsymbols:bell.slash"
+              destructable: true
