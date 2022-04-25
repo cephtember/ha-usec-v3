@@ -52,6 +52,9 @@
     - condition: state
       entity_id: alarm_control_panel.home_alarm
       state: armed_away
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_night
   action:
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.home_alarm
@@ -61,6 +64,7 @@
         message: "Запущен таймер сигнализации"
         
         data:
+          timeout: 600
           url: "/lovelace-alarm/0" 
           actions:
             - action: "URI"
@@ -78,6 +82,10 @@
         title: Сигнализация
         message: "Сработала сигнализация"
         data:
+          push:
+            sound:
+              name: "default"
+              critical: 1
           actions:
             - action: "URI"
               title: "Open Disarm Panel"
@@ -90,6 +98,8 @@
               icon: "sfsymbols:bell.slash"
               destructable: true
 
+    - service: script.flick_red_lights
+
 - alias: '[ Alarm ] - Disarmed'
   id: 118afb36f63a4d8390330c3cf9593d91
   trigger:
@@ -100,6 +110,6 @@
   - service: notify.mobile_app_iphone_amnezia
     data:
       title: "Сигнализация"
-      message: "Выключена кодом"
+      message: "Выключена"
       
-  
+ 

@@ -89,6 +89,7 @@ history:
       ### БАР
       - cover.ikea_blinds
       - sensor.sonoff_bar_temperature
+      - sensor.sonoff_bar_humidity
       - binary_sensor.bar_left_window_contact
       - binary_sensor.bar_big_window_contact
       - binary_sensor.aqara_bar_small_window
@@ -101,11 +102,14 @@ history:
       - binary_sensor.aqara_livingroom_leak_water_leak
       - sensor.zhimi_airpurifier_ma4_pm2_5
       - sensor.livingroom_temperature_temperature
+      - sensor.livingroom_temperature_humidity
       ### ДЕТСКАЯ
       - sensor.aqara_cabinet_temperature
+      - sensor.aqara_cabinet_temperature_humidity
       - binary_sensor.cabinet_left_window_contact
       - binary_sensor.cabinet_right_window_contact
       - sensor.cabinet_floor_temperature_temperature
+      - sensor.cabinet_floor_temperature_humidity
       ### Кухня
       - binary_sensor.kitchen_gas_sensor
       - binary_sensor.kitchen_smoke_sensor
@@ -124,6 +128,7 @@ history:
       - binary_sensor.bedroom_right_window_contact
       - binary_sensor.aqara_bedroom_leak_water_leak
       - sensor.bedroom_temperature_temperature
+      - sensor.bedroom_temperature_humidity
       - binary_sensor.bedroom_door_contact
       - binary_sensor.bedroom_motion
       ### Туалет
@@ -315,144 +320,6 @@ light: !include_dir_merge_list includes/light
 google_assistant: !include google_assistant.yaml
 yandex_smart_home: !include yandex_smart_home.yaml
 alarm_control_panel: !include includes/alarm_control_panel.yaml
-
-#input_number: !include_dir_merge_list includes/input_numbers
-
-# ios:
-#   push:
-#     categories:
-#       - name: humidity_cabinet_livingroom_humidifier
-#         identifier: humidity_cabinet_livingroom_humidifier
-#         actions:
-#           - identifier: HUMIDIFIERON
-#             title: "Включить увлажнитель"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: HUMIDIFIERON1H
-#             title: "Включить увлажнитель на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: HUMIDIFIERPASS
-#             title: "Пропустить"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: true
-
-#       - name: humidity_cabinet_livingroom_fan
-#         identifier: humidity_cabinet_livingroom_fan
-#         actions:
-#           - identifier: ACONFAN
-#             title: "Включить увлажнитель"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACONFANON1H
-#             title: "Включить увлажнитель на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACONFANPASS
-#             title: "Пропустить"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: true
-
-#       - name: purifier
-#         identifier: purifier
-#         actions:
-#           - identifier: PURIFIER1H
-#             title: "Включить очиститель на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: PURIFIERPASS
-#             title: "Пропустить"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: true
-
-#       - name: temperature_cabinet_livingroom_heat
-#         identifier: temperature_cabinet_livingroom_heat
-#         actions:
-#           - identifier: ACANDFLOORONHEAT
-#             title: "Включить AC и пол"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACANDFLOORONHEAT1H
-#             title: "Включить AC и пол на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACONHEAT
-#             title: "Включить AC"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACONHEAT1H
-#             title: "Включить AC на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-
-#       - name: temperature_livingroom_cool
-#         identifier: temperature_bedroom_cool
-#         actions:
-#           - identifier: ACONCOOL
-#             title: "Включить AC"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACONCOOL1H
-#             title: "Включить AC на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-
-#       - name: temperature_bedroom_heat
-#         identifier: temperature_bedroom_heat
-#         actions:
-#           - identifier: ACONHEATBEDROOM
-#             title: "Включить AC"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACON1HBEDROOM
-#             title: "Включить AC на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-
-#       - name: temperature_bedroom_cool
-#         identifier: temperature_bedroom_cool
-#         actions:
-#           - identifier: ACONCOOLBEDROOM
-#             title: "Включить AC"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
-#           - identifier: ACONCOOL1HBEDROOM
-#             title: "Включить AC на 1 час"
-#             activationMode: "background"
-#             authenticationRequired: no
-#             destructive: no
-#             behavior: "default"
 
 adaptive_lighting:
   - name: "default"

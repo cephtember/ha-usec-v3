@@ -16,8 +16,8 @@ cards:
           left: 50%
           top: 50%
           width: 100%
-        tap_action:
-          action: none
+        tap_action: none
+        hold_action: none
         type: image
 
 ######### CABINET ##########
@@ -31,8 +31,8 @@ cards:
         state_image: 
           'on': 'local/images/3DFloorplan/cabinet-light.png'
           'off': 'local/images/3DFloorplan/transparent.png'
-        tap_action:
-          action: none
+        tap_action: none
+        hold_action: none
           
 ######### BAR     ##########
 

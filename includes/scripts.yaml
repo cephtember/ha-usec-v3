@@ -141,3 +141,34 @@ clean_hall:
       zone: '-6616,2673,-2235,4461'
   
   
+flick_red_lights:
+  alias: 'Моргать лампами красным цветом'
+  sequence:
+    - repeat:
+        while:
+          - condition: state
+            entity_id: alarm_control_panel.home_alarm
+            state: triggered
+          # - condition: template
+          #   value_template: '{{ repeat.index <= 500 }}'
+        sequence:
+          - service: light.turn_on
+            target:
+              entity_id: 
+                - light.bar_lights_color
+                - light.livingroon_color_lights
+                - light.strips_color
+            data:
+              color_name: red
+              brightness: 255
+          - delay:
+              seconds: 0.2
+          - service: light.turn_off
+            target:
+              entity_id:
+                - light.bar_lights_color
+                - light.livingroon_color_lights
+                - light.strips_color
+          - delay:
+              seconds: 0.2
+  mode: single
