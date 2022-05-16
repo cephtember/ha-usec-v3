@@ -4,7 +4,7 @@
   icon: mdi:dome-light
   command_topic: "bar/cmnd/tuya_light/power1"
   state_topic: "bar/stat/tuya_light/RESULT"
-  value_template: "{{ value_json.POWER1 }}"
+  state_value_template: "{{ value_json.POWER1 }}"
   payload_available: "Online"
   payload_not_available: "Offline"
   qos: 1
