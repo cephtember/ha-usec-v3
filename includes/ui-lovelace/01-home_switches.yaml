@@ -159,7 +159,7 @@ cards:
           margin-right: auto
           background: '#62717b'
           
-      - entity: group.bar_lights_color
+      - entity: light.bar_main_lamp
         name: Основной свет
         state_color: true
 

@@ -89,7 +89,7 @@ history:
       ### БАР
       - cover.ikea_blinds
       - sensor.sonoff_bar_temperature
-      - sensor.sonoff_bar_humidity
+      - sensor.sonoff_bar_temperature_humidity
       - binary_sensor.bar_left_window_contact
       - binary_sensor.bar_big_window_contact
       - binary_sensor.aqara_bar_small_window
@@ -120,6 +120,8 @@ history:
       - binary_sensor.hikvision_custom_cell_motion_detection
       - sensor.pzem04_energy_voltage
       - sensor.pzem04_energy_today
+      - sensor.pzem04_energy_yesterday
+      - sensor.pzem04_energy_total
       - sensor.no_electricity
       ### Подъезд
       - binary_sensor.entrace_door
@@ -133,13 +135,19 @@ history:
       - binary_sensor.bedroom_motion
       ### Туалет
       - binary_sensor.toilet_door_contact
-      
       ### Разное
       - sensor.ikea_blinds_state
       - sensor.sony_bravia_tv_state
       - sensor.xiaomi_humidifier_state
       - sensor.xiaomi_purifier_3_state
       - vacuum.xiaomi_1c
+      ### Электричество
+      - sensor.elektrichestvo_den
+      - sensor.elektrichestvo_den_cost
+      - sensor.konditsioner_v_detskoi_energiia_den
+      - sensor.polotentsesushitel_energiia_den
+      - sensor.stiralnaia_mashina_energiia_den
+      - sensor.konditsioner_v_spalne_energiia_den
 
 input_boolean:
   auto_climate:
@@ -353,7 +361,7 @@ homekit:
       stream_source: !secret rtsp_2
 
 panel_iframe:
-  torrent:
-    title: "Торрент"
-    url: "https://home.usec.uz:9092"
-    icon: mdi:cloud-download
+  pihole:
+    title: "ADGUARD"
+    url: !secret pihole_link
+    icon: mdi:shield-check

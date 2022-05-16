@@ -6,9 +6,9 @@
       - light.kitchen_main_lamp
       - light.bedroom_main_lamp
       - light.cabinet_main_lamp
-      - light.bar_philips_cbulb_light_x1
-      - light.bar_philips_cbulb_light_x2
-      - light.bar_philips_cbulb_light_x3
+      #- light.bar_philips_cbulb_light_x1
+      #- light.bar_philips_cbulb_light_x2
+      #- light.bar_philips_cbulb_light_x3
       - light.livingroom_cbulb_light_x1
       - light.livingroom_cbulb_light_x2
     from: 'unavailable'
@@ -20,9 +20,9 @@
       - light.kitchen_main_lamp
       - light.bedroom_main_lamp
       - light.cabinet_main_lamp
-      - light.bar_philips_cbulb_light_x1
-      - light.bar_philips_cbulb_light_x2
-      - light.bar_philips_cbulb_light_x3
+      #- light.bar_philips_cbulb_light_x1
+      #- light.bar_philips_cbulb_light_x2
+      #- light.bar_philips_cbulb_light_x3
       - light.livingroom_cbulb_light_x1
       - light.livingroom_cbulb_light_x2
 

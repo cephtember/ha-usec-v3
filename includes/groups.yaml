@@ -17,10 +17,10 @@ bar_lights:
   name: Бар
   entities:
     - light.bar_underlight
-    #- light.bar_main_lamp
-    - light.bar_philips_cbulb_light_x1
-    - light.bar_philips_cbulb_light_x2
-    - light.bar_philips_cbulb_light_x3
+    - light.bar_main_lamp
+#    - light.bar_philips_cbulb_light_x1
+#    - light.bar_philips_cbulb_light_x2
+#    - light.bar_philips_cbulb_light_x3
 
 bar_lights_color:
   name: Бар цветные
@@ -62,12 +62,16 @@ livingroom_lights:
     - light.living_room_rail_lamps
     - light.livingroom_cbulb_light_x1
     - light.livingroom_cbulb_light_x2
+    - light.livingroom_cbulb_light_x3
+    - light.livingroom_cbulb_light_x4
 
 livingroon_color_lights:
   name: Зал цветные
   entities:
     - light.livingroom_cbulb_light_x1
     - light.livingroom_cbulb_light_x2
+    - light.livingroom_cbulb_light_x3
+    - light.livingroom_cbulb_light_x4
 
 toilet_lights:
   name: Туалет
