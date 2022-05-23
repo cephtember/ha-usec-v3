@@ -14,6 +14,23 @@
 #        entity_id: camera.hikvision_ds_2cd1143g0_i_mainstream
 #        filename: "www/cam_captures/hikvision.mp4"
 
+fade_the_light:
+  alias: Fade the light
+  description: 'Incrementally fade the light'
+  sequence:
+    - service: light.turn_on
+      entity_id: light.bar_underlight
+      data_template:
+        brightness: >
+          {% set step_size = 55 %}
+          {% set current_brightness = (state_attr('light.bar_underlight', 'brightness') | int) %}
+          {% set new_brightness = current_brightness | int + step_size %}
+          {% if new_brightness > 255 %}
+            0
+          {% else %}
+            {{ new_brightness }}
+          {% endif %}
+
 
 photo_hikvision_telegram:
   alias: Отправить фото в telegram

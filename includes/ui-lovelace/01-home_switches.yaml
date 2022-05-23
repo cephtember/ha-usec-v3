@@ -55,7 +55,7 @@ cards:
         name: Основной свет
         state_color: true
       
-      - entity: group.livingroon_color_lights
+      - entity: group.livingroom_color_lights
         name: Дополнительный свет
         state_color: true
 
