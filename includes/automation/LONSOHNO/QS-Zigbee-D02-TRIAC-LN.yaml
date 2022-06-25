@@ -12,7 +12,11 @@
       data_template:
         brightness: >
           {% set step_size = 55 %}
-          {% set current_brightness = (state_attr('light.bar_underlight', 'brightness') | int) %}
+          {% if (state_attr('light.bar_underlight', 'brightness') != None)%}
+            {% set current_brightness = (state_attr('light.bar_underlight', 'brightness') | int) %}
+          {% else %}
+            {% set current_brightness = 0 %}
+          {% endif %}
           {% set new_brightness = current_brightness | int + step_size %}
           {% if new_brightness > 255 %}
             0

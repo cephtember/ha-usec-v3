@@ -67,7 +67,7 @@
           {% if states('sensor.cabinet_main_lamp_brightness')|int >= 99 %}        
             0
           {% elif states('sensor.cabinet_main_lamp_brightness')|int < 99 %}
-            {{ states('sensor.cabinet_main_lamp_brightness')|int + 333 }}            
+            {{ states('sensor.cabinet_main_lamp_brightness')|int + 33 }}            
           {%- else -%}
             100
           {%- endif %}
