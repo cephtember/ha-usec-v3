@@ -108,6 +108,7 @@ history:
       - sensor.aqara_cabinet_temperature_humidity
       - binary_sensor.cabinet_left_window_contact
       - binary_sensor.cabinet_right_window_contact
+      - binary_sensor.cabinet_motion
       - sensor.cabinet_floor_temperature_temperature
       - sensor.cabinet_floor_temperature_humidity
       ### Кухня
@@ -258,10 +259,6 @@ notify:
     services:
       - service: mobile_app_iphone_amnezia
       - service: mobile_app_tanzilyas_iphone
-
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_secret
 
 spotcast:
   sp_dc: !secret spotcast_dc
