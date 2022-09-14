@@ -103,6 +103,7 @@ history:
       - sensor.zhimi_airpurifier_ma4_pm2_5
       - sensor.livingroom_temperature_temperature
       - sensor.livingroom_temperature_humidity
+      - binary_sensor.livingroom_motion
       ### ДЕТСКАЯ
       - sensor.aqara_cabinet_temperature
       - sensor.aqara_cabinet_temperature_humidity
@@ -125,7 +126,7 @@ history:
       - sensor.pzem04_energy_total
       - sensor.no_electricity
       ### Подъезд
-      - binary_sensor.entrace_door
+      - binary_sensor.entrace_door_contact
       ### Спальня
       - binary_sensor.bedroom_left_window_contact
       - binary_sensor.bedroom_right_window_contact
@@ -362,3 +363,7 @@ panel_iframe:
     title: "ADGUARD"
     url: !secret pihole_link
     icon: mdi:shield-check
+
+pandora_cas:
+    username: !secret pandora_username_1 
+    password: !secret pandora_password_1

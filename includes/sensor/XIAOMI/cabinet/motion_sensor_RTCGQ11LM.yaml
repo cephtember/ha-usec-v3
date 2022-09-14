@@ -1,11 +1,11 @@
 - platform: "mqtt"
   unique_id: cabinet_motion_availability
-  name: Датчик движения (Кухня)_availability
+  name: Датчик движения (Детская)_availability
   state_topic: "zigbee2mqtt/cabinet_motion/availability"
 
 # - platform: "mqtt"
 #   unique_id: cabinet_motion_temperature
-#   name: Датчик движения (Кухня)_temperature
+#   name: Датчик движения (Детская)_temperature
 #   state_topic: "zigbee2mqtt/cabinet_motion"
 #   availability_topic: "zigbee2mqtt/cabinet_motion/availability"
 #   value_template: "{{ value_json.temperature }}"
@@ -14,7 +14,7 @@
 
 # - platform: "mqtt"
 #   unique_id: cabinet_motion_voltage
-#   name: Датчик движения (Кухня)_voltage
+#   name: Датчик движения (Детская)_voltage
 #   state_topic: "zigbee2mqtt/cabinet_motion"
 #   availability_topic: "zigbee2mqtt/cabinet_motion/availability"
 #   value_template: "{{ value_json.voltage }}"
@@ -23,7 +23,7 @@
 
 # - platform: "mqtt"
 #   unique_id: cabinet_motion_signal
-#   name: Датчик движения (Кухня)_signal
+#   name: Датчик движения (Детская)_signal
 #   state_topic: "zigbee2mqtt/cabinet_motion"
 #   availability_topic: "zigbee2mqtt/cabinet_motion/availability"
 #   value_template: "{{ value_json.linkquality }}"
@@ -32,7 +32,7 @@
   
 - platform: "mqtt"
   unique_id: cabinet_motion_battery
-  name: Датчик движения (Кухня)_battery
+  name: Датчик движения (Детская)_battery
   state_topic: "zigbee2mqtt/cabinet_motion"
   availability_topic: "zigbee2mqtt/cabinet_motion/availability"
   value_template: "{{ value_json.battery }}"
@@ -41,7 +41,7 @@
   
 - platform: "mqtt"
   unique_id: cabinet_motion_Illuminance_lux
-  name: Датчик движения (Кухня)_Illuminance_lux
+  name: Датчик движения (Детская)_Illuminance_lux
   state_topic: "zigbee2mqtt/cabinet_motion"
   availability_topic: "zigbee2mqtt/cabinet_motion/availability"
   value_template: "{{ value_json.illuminance_lux }}"
@@ -49,7 +49,7 @@
 
 - platform: "mqtt"
   unique_id: cabinet_motion_Illuminance
-  name: Датчик движения (Кухня)_Illuminance
+  name: Датчик движения (Детская)_Illuminance
   state_topic: "zigbee2mqtt/cabinet_motion"
   availability_topic: "zigbee2mqtt/cabinet_motion/availability"
   value_template: "{{ value_json.illuminance }}"

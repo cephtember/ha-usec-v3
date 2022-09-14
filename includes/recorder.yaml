@@ -22,6 +22,7 @@ include:
     - sensor.zhimi_airpurifier_ma4_pm2_5
     - sensor.livingroom_temperature_temperature
     - sensor.livingroom_temperature_humidity
+    - binary_sensor.livingroom_motion
 
     ### ДЕТСКАЯ
     - sensor.aqara_cabinet_temperature
@@ -30,6 +31,7 @@ include:
     - binary_sensor.cabinet_right_window_contact
     - sensor.cabinet_floor_temperature_temperature
     - sensor.cabinet_floor_temperature_humidity
+    - binary_sensor.cabinet_motion
 
     ### Кухня
     - binary_sensor.kitchen_gas_sensor
@@ -47,7 +49,7 @@ include:
     - sensor.no_electricity
 
     ### Подъезд
-    - binary_sensor.entrace_door
+    - binary_sensor.entrace_door_contact
 
     ### Спальня
     - binary_sensor.bedroom_left_window_contact
