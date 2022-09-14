@@ -17,7 +17,7 @@ bar_lights:
   name: Бар
   entities:
     - light.bar_underlight
-    - light.bar_main_lamp
+    #- light.bar_main_lamp
     - light.bar_philips_cbulb_light_x1
     - light.bar_philips_cbulb_light_x2
     - light.bar_philips_cbulb_light_x3
