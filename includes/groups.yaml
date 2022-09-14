@@ -74,6 +74,10 @@ livingroom_color_lights:
     - light.livingroom_cbulb_light_x2
     - light.livingroom_cbulb_light_x3
     - light.livingroom_cbulb_light_x4
+
+livingroom_color_lights_main:
+  name: Зал маленькие цветные
+  entities:  
     - light.livingroom_cbuld_add_light_x1
     - light.livingroom_cbuld_add_light_x2
 
@@ -112,6 +116,7 @@ all_motion_sensors:
 
 cabinet_motion_sensors:
   entities:
+    - binary_sensor.cabinet_motion
 
 bar_motion_sensors:
   entities:

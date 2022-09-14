@@ -51,7 +51,7 @@ cards:
           margin-right: auto
           background: '#62717b'
       
-      - entity: light.living_room_main_lamp
+      - entity: group.livingroom_color_lights_main
         name: Основной свет
         state_color: true
       
@@ -100,6 +100,10 @@ cards:
         state_color: true        
 
       - type: section  
+      - entity: binary_sensor.livingroom_motion
+        name: Датчик движения
+        state_color: true
+
       - entity: binary_sensor.aqara_livingroom_leak_water_leak
         name: Под батареей
         state_color: true
@@ -134,11 +138,17 @@ cards:
       - type: section
       - entity: binary_sensor.kitchen_smoke_sensor
         name: Датчик задымления
+        state_color: true
       - entity: binary_sensor.kitchen_gas_sensor
         name: Датчик газа
+        state_color: true
       - type: section  
+      - entity: binary_sensor.kitchen_motion
+        name: Датчик движения
+        state_color: true
       - entity: binary_sensor.aqara_kitchen_leak_water_leak
         name: Под посудомойкой
+        state_color: true
 
 
 
@@ -159,7 +169,7 @@ cards:
           margin-right: auto
           background: '#62717b'
           
-      - entity: light.bar_main_lamp
+      - entity: group.bar_lights_color
         name: Основной свет
         state_color: true
 
@@ -168,14 +178,22 @@ cards:
         state_color: true
 
       - type: section      
+      
+      - entity: binary_sensor.bar_motion
+        name: Датчик движения
+        state_color: true
+      
       - entity: binary_sensor.bar_big_window_contact
         name: Правое окно
+        state_color: true
         
       - entity: binary_sensor.bar_left_window_contact
         name: Левое окно
+        state_color: true
 
       - entity: binary_sensor.bar_small_window_contact
         name: Левая форточка
+        state_color: true
         
       - entity: sensor.ikea_blinds_state
         unit_of_measurement: "%"
@@ -270,11 +288,20 @@ cards:
       - type: section
       - entity: sensor.cabinet_thermostat_state
         name: Теплый пол      
-      - type: section      
+      
+      - type: section     
+      
+      - entity: binary_sensor.cabinet_motion
+        name: Датчик движения 
+        state_color: true
+      
       - entity: binary_sensor.cabinet_right_window_contact
         name: Правое окно
+        state_color: true
+      
       - entity: binary_sensor.cabinet_left_window_contact
         name: Левое окно
+        state_color: true
         
 
         

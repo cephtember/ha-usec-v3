@@ -9,7 +9,8 @@ include:
     - sensor.sonoff_bar_temperature_humidity
     - binary_sensor.bar_left_window_contact
     - binary_sensor.bar_big_window_contact
-    - binary_sensor.aqara_bar_small_window
+    - binary_sensor.bar_small_window_contact
+    - binary_sensor.bar_motion
 
     ### ВАННАЯ
     - binary_sensor.aqara_bathroom_leak_water_leak
@@ -47,6 +48,7 @@ include:
     - sensor.pzem04_energy_yesterday
     - sensor.pzem04_energy_total
     - sensor.no_electricity
+    - sensor.pzem04_energy_frequency
 
     ### Подъезд
     - binary_sensor.entrace_door_contact
