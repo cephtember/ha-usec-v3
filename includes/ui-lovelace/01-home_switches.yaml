@@ -51,11 +51,11 @@ cards:
           margin-right: auto
           background: '#62717b'
       
-      - entity: group.livingroom_color_lights_main
+      - entity: light.livingroom_color_lights_main
         name: Основной свет
         state_color: true
       
-      - entity: group.livingroom_color_lights
+      - entity: light.livingroom_color_lights
         name: Дополнительный свет
         state_color: true
 
@@ -169,7 +169,7 @@ cards:
           margin-right: auto
           background: '#62717b'
           
-      - entity: group.bar_lights_color
+      - entity: light.bar_color_lights
         name: Основной свет
         state_color: true
 

@@ -22,10 +22,10 @@
       "{{ value_json.current_heating_setpoint }}"
     temperature_state_template: "{{ value_json.current_heating_setpoint }}"
     temperature_state_topic: zigbee2mqtt/hall_thermostat
-    hold_modes: 
+    preset_modes: 
       - "hold"
       - "program"
-    hold_command_topic: zigbee2mqtt/hall_thermostat/set/preset
-    hold_state_template: "{{ value_json.preset }}"
-    hold_state_topic: zigbee2mqtt/hall_thermostat
+    preset_mode_command_topic: zigbee2mqtt/hall_thermostat/set/preset
+    preset_mode_command_template: "{{ value_json.preset }}"
+    preset_mode_state_topic: zigbee2mqtt/hall_thermostat
     retain: false
